@@ -1,0 +1,62 @@
+app:
+  symbol: ETHUSDT
+  refresh_seconds: 60
+  lookback_klines: 500
+  signal_cooldown_hours: 8
+  database_file: monitor_state.json
+  timezone: Asia/Shanghai
+
+account:
+  equity_rmb: 1000
+  leverage: 13
+  margin_mode: isolated
+  risk_A_pct: 0.03
+  risk_Aplus_pct: 0.05
+  rmb_per_usdt: 7.15
+
+strategy:
+  score_Aplus: 85
+  score_A: 75
+  min_rr_A: 2.0
+  min_rr_Aplus: 2.5
+  min_target_pct: 0.008
+  orderbook_band_pct: 0.005
+
+position:
+  enabled: true
+  side: SHORT
+  qty_eth: 0.160
+  entry_price: 2413.54
+  tp1: 2385
+  tp1_reduce_pct: 0.28
+  tp2: 2370
+  tp2_reduce_pct: 0.35
+  tp3: 2355
+  invalidation_low: 2435
+  invalidation_high: 2440
+  extension_tp1: 2320
+  extension_tp2: 2300
+
+alerts:
+  enable_sound: true
+  enable_desktop_notification: false
+  enable_browser_notification: true
+  sound_A_hz: 880
+  sound_Aplus_hz: 1320
+  sound_duration_ms: 700
+
+news:
+  enabled: true
+  manual_event_risk: auto
+  google_news_rss_query: >
+    (Ethereum OR Bitcoin OR crypto OR Binance OR ETF OR Fed OR inflation OR jobs OR sanctions OR war OR ceasefire OR election OR SEC) when:1h
+  high_risk_keywords: [war, missile, invasion, sanctions, ceasefire, emergency, sec, ban, hack, hacked, exploit, outage, insolvency, liquidation, fed, cpi, payroll, election]
+  shock_keywords: ["exchange hacked", "major hack", "war begins", invasion, "emergency rate", "trading halted", "stablecoin depeg"]
+
+network:
+  timeout_seconds: 15
+  use_windows_system_proxy: false
+  custom_proxy: ""
+  # Examples:
+  # custom_proxy: "http://127.0.0.1:7890"
+  # custom_proxy: "http://127.0.0.1:10809"
